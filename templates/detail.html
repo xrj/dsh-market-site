@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{PAGE_NAME}} | DSH 插件集市</title>
+  <meta name="description" content="{{PAGE_DESCRIPTION}}">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="{{CANONICAL_URL}}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{PAGE_NAME}} | DSH 插件集市">
+  <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+  <meta property="og:url" content="{{CANONICAL_URL}}">
+  <link rel="icon" href="../../assets/whale-hero.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <script type="application/ld+json">{{JSON_LD}}</script>
+</head>
+<body class="detail-page">
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="../../" aria-label="返回 DSH 插件集市">
+        <img src="../../assets/whale-hero.png" alt="鲸鱼图标">
+        <span>
+          <strong>DSH <em>插件集市</em></strong>
+          <small>DeepSeek Harness 非官方插件集市</small>
+        </span>
+      </a>
+      <a class="topbar-link" href="../../">返回集市</a>
+    </header>
+
+    <main class="detail-main">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="../../">插件集市</a>
+        <span aria-hidden="true">/</span>
+        <span>项目详情</span>
+      </nav>
+
+      <section class="detail-hero">
+        <div class="detail-tags">
+          <span>{{CATEGORY}}</span>
+          <span>{{TYPE}}</span>
+        </div>
+        <h1>{{PAGE_NAME}}</h1>
+        <p class="repository-name">{{FULL_NAME}} · {{OWNER}}</p>
+        <p class="detail-description">{{DESCRIPTION}}</p>
+        <div class="detail-actions">
+          {{GITHUB_LINK}}
+          {{HOMEPAGE_LINK}}
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <div class="detail-section-head">
+          <p class="section-label">项目资料</p>
+          <h2>基本信息</h2>
+        </div>
+        <dl class="detail-facts">
+          {{METADATA_ROWS}}
+        </dl>
+      </section>
+
+      <section class="detail-section">
+        <div class="detail-section-head">
+          <p class="section-label">同一分类</p>
+          <h2>还可以看看</h2>
+        </div>
+        <div class="card-grid similar-grid">
+          {{SIMILAR_CARDS}}
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>DSH 插件集市是非官方社区项目。项目资料来自公开 GitHub 仓库，使用前请阅读原始仓库说明。</p>
+    </footer>
+  </div>
+</body>
+</html>

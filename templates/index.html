@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DSH 插件集市 | DeepSeek Harness 非官方插件集市</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <meta name="robots" content="index,follow">
+  <meta name="google-site-verification" content="Z7tP5cAi7Et4jtIUblEspE2JOvSgalGG51NyY3enj04">
+  <link rel="canonical" href="{{SITE_URL}}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DSH 插件集市">
+  <meta property="og:description" content="{{META_DESCRIPTION}}">
+  <meta property="og:url" content="{{SITE_URL}}/">
+  <link rel="icon" href="assets/whale-hero.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"DSH 插件集市","url":{{SITE_URL_JSON}},"description":"DeepSeek Harness 非官方插件集市。按用途、类型和更新时间浏览 GitHub dsh-plugin Topic 项目。"}</script>
+</head>
+<body class="home-page">
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#catalog" aria-label="返回 DSH 插件集市">
+        <img src="assets/whale-hero.png" alt="鲸鱼图标">
+        <span>
+          <strong>DSH <em>插件集市</em></strong>
+          <small>DeepSeek Harness 非官方插件集市</small>
+        </span>
+      </a>
+      <p class="snapshot"><span aria-hidden="true"></span>数据更新 {{GENERATED_AT}}</p>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div>
+          <p class="section-label">DEEPSEEK HARNESS · 一切皆插件</p>
+          <h1>潜入深海，打捞最好用的 DSH 插件。</h1>
+          <p class="intro-copy">自动收录 GitHub <code>dsh-plugin</code> Topic 生态项目，按功能分类、精选与验证。鲸群已就位，随你挑选。</p>
+          <div class="hero-stats" aria-label="插件集市数据概览">
+            <div class="hero-stat"><strong>{{PROJECT_COUNT}}</strong><span>收录项目</span></div>
+            <div class="hero-stat"><strong>{{CATEGORY_COUNT}}</strong><span>功能分类</span></div>
+            <div class="hero-stat"><strong>{{STAR_COUNT}}</strong><span>GitHub Stars</span></div>
+            <div class="hero-stat"><strong>{{VERIFIED_COUNT}}</strong><span>已验证项目</span></div>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <figure class="hero-media">
+            <img src="assets/whale-hero.png" alt="蓝色鲸鱼插件吉祥物插画">
+          </figure>
+          <div class="reading-note">
+            <b>浏览时先看</b>
+            <p>项目用途、最近更新和原始仓库。Star 只是一项参考。</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="controls" aria-label="插件集市筛选">
+        <label class="search-field">
+          <span>搜索</span>
+          <input id="query" type="search" autocomplete="off" placeholder="搜索项目名称、作者、说明或标签">
+        </label>
+        <label class="select-field">
+          <span>类型</span>
+          <select id="type-filter" aria-label="按项目类型筛选"></select>
+        </label>
+        <label class="select-field">
+          <span>排序</span>
+          <select id="sort-filter" aria-label="排序方式">
+            <option value="stars">Star 最多</option>
+            <option value="updated">最近更新</option>
+            <option value="created">最新创建</option>
+            <option value="name">名称排序</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="workspace" id="catalog">
+        <aside class="directory-sidebar">
+          <p class="sidebar-heading">功能分类</p>
+          <nav id="category-nav" class="category-nav" aria-label="功能分类"></nav>
+          <p class="sidebar-note">数据来自 GitHub <code>dsh-plugin</code> Topic。本站不代表 DeepSeek 官方。</p>
+        </aside>
+
+        <div class="catalog">
+          <section id="featured-section">
+            <div class="catalog-head">
+              <div>
+                <p class="section-label">先看这些</p>
+                <h2>推荐项目</h2>
+              </div>
+              <p id="featured-summary" class="catalog-summary"></p>
+            </div>
+            <div id="featured-grid" class="card-grid" aria-live="polite"></div>
+          </section>
+
+          <section class="all-projects">
+            <div class="catalog-head">
+              <div>
+                <p class="section-label">全部插件</p>
+                <h2>全部项目</h2>
+              </div>
+              <p id="result-count" class="catalog-summary" aria-live="polite"></p>
+            </div>
+            <div id="project-grid" class="card-grid" aria-live="polite">
+              <p class="loading-copy">正在读取项目数据。</p>
+            </div>
+            <div class="load-more-wrap">
+              <button id="load-more" type="button">加载更多</button>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>DSH 插件集市是非官方社区项目。数据来自 GitHub <a href="https://github.com/topics/dsh-plugin" target="_blank" rel="noopener noreferrer">dsh-plugin Topic</a>；项目名称、说明和链接以各自仓库为准。</p>
+    </footer>
+  </div>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>

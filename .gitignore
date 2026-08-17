@@ -1,0 +1,14 @@
+# 构建产物只在 Actions 中部署，不回写到源码仓库。
+site/assets/
+site/plugins/
+site/index.html
+site/robots.txt
+site/sitemap.xml
+site/update-report.json
+site/google16318b32d840ca11.html
+__pycache__/
+*.py[cod]
+.wrangler/
+.test-data-before.json
+.build-test.stdout.txt
+.build-test.stderr.txt
