@@ -25,15 +25,15 @@ jobs:
       GITHUB_TOKEN: ${{ github.token }}
     steps:
       - name: 检出主站源码
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 配置 Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
       - name: 配置 Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "22"
 
@@ -86,7 +86,7 @@ jobs:
 
       - name: 保留本次构建报告
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: dsh-market-build-${{ github.run_id }}
           if-no-files-found: warn
